@@ -3,6 +3,7 @@ The supplementary folder contains the supplemental materials for the paper.
 The generated promoter sequences and models are located in the folders 'sequences' and 'model', respectively.
 # If you want to train ddpm for generating E. coli/cyanobacteria promoters, you can perform the following actions.
 run :
+
 cd train_generate_E_coli_promoter/train_generate_E_coli_promotercyanobacteria
 
 python train_generate_model.py
@@ -10,7 +11,9 @@ python train_generate_model.py
 python generate_promoters
 
 # For prediction task
-run : cd train_prediction_model
+run : 
+
+cd train_prediction_model
 
 python make_dataset.py
 
