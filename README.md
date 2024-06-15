@@ -7,6 +7,8 @@ cd train_generate_E_coli_promoter/train_generate_E_coli_promotercyanobacteria
 
 python train_generate_model.py
 
+python generate_promoters
+
 # For prediction task
 run : cd train_prediction_model
 
