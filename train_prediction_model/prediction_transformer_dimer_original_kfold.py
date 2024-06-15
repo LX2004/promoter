@@ -142,7 +142,6 @@ def train(params, features_array, labels_array):
             if correlation_coefficient > 0.29:
                 torch.save(gen,'./models/kfold_predict_{0}_mertric={1}.pth'.format(epoch,correlation_coefficient))
         
-        # 存储指标
 
         dict2 = {'correlation_coefficient':max(metric),
                 'dataset': sample_folder,
@@ -260,4 +259,4 @@ if __name__ == '__main__':
     objective = lambda params: train(params, features_array, labels_array)
     best = fmin(fn=objective, space=space, algo=tpe.suggest, max_evals=1000, trials=trials)
 
-    print('最佳参数:', best)
+    print('best parameters:', best)
