@@ -196,6 +196,8 @@ def create_argparser():
         schedule_high=0.02,
 
         device=device,
+        # Early stopping parameter (0 means no early stopping)
+        early_stopping=10,
     )
 
     defaults.update(script_utils.diffusion_defaults())
