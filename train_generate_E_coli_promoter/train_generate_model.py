@@ -21,7 +21,7 @@ class CustomDataset(Dataset):
 
 def main():
 
-    loss_flag = 0.15
+    # loss_flag = 0.15
     args = create_argparser().parse_args()
     
     model_path = args.log_dir
