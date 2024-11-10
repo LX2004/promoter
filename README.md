@@ -2,8 +2,8 @@
 To directly use the trained model, please visit our [Promoter Design Integration Platform](https://bioinformatics-syn.org/). After a brief setup and a short wait, you will receive the desired results.
 
 # Pre-trainde model
-[Escherichia coli Promoter Generation Model](https://drive.google.com/file/d/1S7PESHCbILT_Z_rodAT_2TA1d93se2LV/view?usp=drive_link).
-[Cyanobacteria Promoter Generation Model](https://drive.google.com/file/d/1SvVBMARE96mMdp8DzGCkfkzZTouJIdFt/view?usp=drive_link)
+[Escherichia coli Promoter Generation Model](https://drive.google.com/file/d/1S7PESHCbILT_Z_rodAT_2TA1d93se2LV/view?usp=drive_link); 
+[Cyanobacteria Promoter Generation Model](https://drive.google.com/file/d/1SvVBMARE96mMdp8DzGCkfkzZTouJIdFt/view?usp=drive_link); 
 [Predictive Model](https://drive.google.com/file/d/1De7xCmCfwCoYH_zECsprUTsSUeROtg00/view?usp=drive_link)
 Click the link to download the pre-trained model.
 
