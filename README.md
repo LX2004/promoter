@@ -12,9 +12,11 @@ Click the link to download the pre-trained model.
 
 Models used by other researchers for promoter generation can be accessed through the following link: [VAE](https://figshare.com/articles/software/CyanoDeeplearning/2233%E2%80%8C1044);[GAN](https://github.com/HaochenW/Deep_promoter).
 
-# promoter
+# Genarated promoters and device information
 The supplementary folder contains the supplemental materials for the paper.
-The generated promoter sequences and models are located in the folders 'sequences' and 'model', respectively.
+The generated promoter sequences are located in the folders 'sequences'.
+
+Device information used in this paper: CUDA:11.5; GPU: A800, 80G.
 
 # Preparation
 In the first step, you should create env for code. Follow the steps below to create a virtual environment named "promoter." All code for this project must be run within this environment. run:
