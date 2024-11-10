@@ -4,6 +4,7 @@ To directly use the trained model, please visit our [Promoter Design Integration
 # promoter
 The supplementary folder contains the supplemental materials for the paper.
 The generated promoter sequences and models are located in the folders 'sequences' and 'model', respectively.
+
 # Preparation
 In the first step, you should create env for code. Follow the steps below to create a virtual environment named "promoter." All code for this project must be run within this environment. run:
 
