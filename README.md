@@ -45,3 +45,65 @@ python prediction_transformer_dimer_original_kfold.py
 
 python test_model_performance.py
 ```
+# Parameters 
+def create_argparser():
+# Hyperparameters for Diffusion Model Training
+
+Below are the descriptions of the hyperparameters used in the diffusion model training script:
+
+### 1. `learning_rate`
+- **Description**: Controls the rate at which the model responds to the loss function in each iteration.
+- **Default Value**: `1e-3` (0.001)
+
+### 2. `batch_size`
+- **Description**: The number of samples used in each training iteration.
+- **Default Value**: `256`
+- **Note**: A larger `batch_size` can improve training stability but requires more memory.
+
+### 3. `iterations`
+- **Description**: Total number of training iterations.
+- **Default Value**: `2000`
+
+### 4. `log_to_wandb`
+- **Description**: Enables logging to Weights & Biases (WandB) for experiment tracking.
+- **Default Value**: `True` (enabled)
+
+### 5. `log_rate`
+- **Description**: Frequency of logging. This defines how often logs are recorded during training.
+- **Default Value**: `1` (logs after each iteration)
+
+### 6. `checkpoint_rate`
+- **Description**: Frequency of model checkpoint saving.
+- **Default Value**: `100` (saves checkpoint every 100 iterations)
+
+### 7. `log_dir`
+- **Description**: Directory for saving logs and model checkpoints.
+- **Default Value**: `"../model"`
+
+### 8. `project_name`
+- **Description**: Name of the project, used for logging and saving model files.
+- **Default Value**: `'cyanobacteria'`
+
+### 9. `out_init_conv_padding`
+- **Description**: Initial padding size for convolutional layers in the model. Controls the effective area of convolution kernels.
+- **Default Value**: `1`
+
+### 10. `run_name`
+- **Description**: Name for the current run, typically with a timestamp for unique identification of different runs.
+- **Default Value**: Automatically generated, e.g., `"ddpm-2024-11-10-15-30"`
+
+### 11. `model_checkpoint`
+- **Description**: Path to a model checkpoint file for resuming training or inference. 
+- **Default Value**: `None` (starts training from scratch)
+
+### 12. `optim_checkpoint`
+- **Description**: Path to an optimizer checkpoint file for resuming training.
+- **Default Value**: `None` (starts with a new optimizer)
+
+### 13. `schedule_low`
+- **Description**: Lower limit for the learning rate scheduler, defining the minimum learning rate.
+- **Default Value**: `1e-4` (0.0001)
+
+### 14. `schedule_high`
+- **Description**: Upper limit for the learning rate scheduler, defining the maximum learning rate.
+- **Default Value**: `0.02`
