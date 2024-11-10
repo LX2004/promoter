@@ -45,11 +45,10 @@ python prediction_transformer_dimer_original_kfold.py
 
 python test_model_performance.py
 ```
-# Parameters 
-def create_argparser():
+
 # Hyperparameters for Diffusion Model Training
 
-Below are the descriptions of the hyperparameters used in the diffusion model training script:
+You can view and modify these hyperparameters in the program "train_generate_E_coli_promoter/train_generate_model.py". Below are the descriptions of the hyperparameters used in the diffusion model training script:
 
 ### 1. `learning_rate`
 - **Description**: Controls the rate at which the model responds to the loss function in each iteration.
