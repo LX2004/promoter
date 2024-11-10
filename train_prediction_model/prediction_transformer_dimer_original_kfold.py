@@ -245,29 +245,29 @@ if __name__ == '__main__':
     'dropout_rate_fc': 0.4458100938040957, 
 
     'embedding_dim1': 64,
-    'embedding_dim2': 64, 
+    'embedding_dim2': 64,
 
     'fc_hidden1': 210,
     'fc_hidden2': 37,
 
-    'hidden_dim1': 128, 
-    'hidden_dim2': 1024, 
+    'hidden_dim1': 128,
+    'hidden_dim2': 1024,
 
-    'l2_regularization': 1e-5, 
+    'l2_regularization': 1e-5,
       
-    'latent_dim1': 64, 
-    'latent_dim2': 256, 
+    'latent_dim1': 64,
+    'latent_dim2': 256,
 
     'num_head1': 8,
-    'num_head2': 16, 
+    'num_head2': 16,
 
-    'seq_len': 50, 
-    'train_base_learning_rate': 0.0001, 
-    'train_batch_size': 512, 
-    'train_epochs_num': 500, 
+    'seq_len': 50,
+    'train_base_learning_rate': 0.0001,
+    'train_batch_size': 512,
+    'train_epochs_num': 500,
 
     'transformer_num_layers1': 3,
-    'transformer_num_layers2': 3, 
+    'transformer_num_layers2': 3,
        }
 
 
@@ -277,7 +277,7 @@ if __name__ == '__main__':
     space = {
 
         'train_batch_size':hp.choice('train_batch_size',[1024]),
-        'seq_len':hp.choice('seq_len',[50]),  
+        'seq_len':hp.choice('seq_len',[50]),
         'device_num':hp.choice('device_num',[4]),
         'train_epochs_num':hp.choice('train_epochs_num',[500]),
 
