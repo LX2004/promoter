@@ -25,8 +25,7 @@ def main():
 
     args = create_argparser().parse_args()
 
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    torch.cuda.set_device(3)
+    device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
     try:
         diffusion = script_utils.get_diffusion_from_args(args).to(device)
