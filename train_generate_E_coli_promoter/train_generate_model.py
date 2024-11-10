@@ -88,7 +88,10 @@ def main():
         train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
         test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
-
+    # Early stopping variables
+        best_test_loss = float('inf')
+        epochs_since_improvement = 0
+        
         for iteration in range(1, args.iterations + 1):
 
             diffusion.train()
@@ -108,8 +111,6 @@ def main():
                 diffusion.update_ema()
                 
             acc_train_loss /= len(train_loader)
-            print(f'epoch ={iteration}, train loss = {acc_train_loss}')
-
             scheduler.step()
             
             if iteration % args.log_rate == 0:
@@ -131,10 +132,12 @@ def main():
                 test_loss /= len(test_loader)
                 acc_train_loss /= args.log_rate
             
+                print(f'epoch = {iteration}, train loss = {acc_train_loss}')
                 print(f'epoch = {iteration}, test_loss = {test_loss}')
             
             # Early stopping logic
                 if test_loss < best_test_loss:
+                    
                     best_test_loss = test_loss
                     epochs_since_improvement = 0  # Reset the counter when improvement occurs
                     print('Best model saved')
@@ -148,13 +151,13 @@ def main():
                     print(f"Early stopping triggered after {iteration} iterations")
                     break
 
-            if test_loss < loss_flag:
+            # if test_loss < loss_flag:
 
-                loss_flag = test_loss
-                print('save best model')
+            #     loss_flag = test_loss
+            #     print('save best model')
 
-                model_filename = f"{args.log_dir}/{args.project_name}-{args.run_name}-kernel={1+2*args.out_init_conv_padding}--best-model.pth"
-                torch.save(diffusion.state_dict(), model_filename)
+            #     model_filename = f"{args.log_dir}/{args.project_name}-{args.run_name}-kernel={1+2*args.out_init_conv_padding}--best-model.pth"
+            #     torch.save(diffusion.state_dict(), model_filename)
 
             if iteration % args.checkpoint_rate == 0:
 
