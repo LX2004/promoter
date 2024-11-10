@@ -245,4 +245,3 @@ This file aims to provide a clear understanding of the hyperparameters used for 
 1. Synthetic promoter design in Escherichia coli based on a deep generative network.
 
 2. Design of synthetic promoters for cyanobacteria with generative deep-learning model.
-3. 
