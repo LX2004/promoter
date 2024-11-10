@@ -196,7 +196,7 @@ def create_argparser():
         schedule_high=0.02,
 
         device=device,
-        # Early stopping parameter (0 means no early stopping)
+        # Early stopping parameter
         early_stopping=10,
     )
 
