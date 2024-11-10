@@ -28,7 +28,7 @@ def main():
     model_path = args.log_dir
     
     if not os.path.exists(model_path):
-        os.makedirs(folder_path)
+        os.makedirs(model_path)
         print(f"Created folder: {model_path}")
     else:
         print(f"Folder already exists: {model_path}")
