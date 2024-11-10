@@ -88,12 +88,12 @@ def main():
         train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
         test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
-        acc_train_loss = 0
 
         for iteration in range(1, args.iterations + 1):
 
             diffusion.train()
-
+            acc_train_loss = 0
+            
             for x in train_loader:
 
                 x = x.to(device)               
@@ -106,7 +106,8 @@ def main():
                 optimizer.step()
 
                 diffusion.update_ema()
-
+                
+            acc_train_loss /= len(train_loader)
             print(f'epoch ={iteration}, train loss = {acc_train_loss}')
 
             scheduler.step()
@@ -124,15 +125,28 @@ def main():
                         loss = diffusion(x)
                         test_loss += loss.item()
                 
-                samples = diffusion.sample(10, device)
-                samples = ((samples + 1) / 2).clip(0, 1).permute(0, 2, 3, 1).numpy()
+                # samples = diffusion.sample(10, device)
+                # samples = ((samples + 1) / 2).clip(0, 1).permute(0, 2, 3, 1).numpy()
 
                 test_loss /= len(test_loader)
                 acc_train_loss /= args.log_rate
             
                 print(f'epoch = {iteration}, test_loss = {test_loss}')
             
-            acc_train_loss = 0
+            # Early stopping logic
+                if test_loss < best_test_loss:
+                    best_test_loss = test_loss
+                    epochs_since_improvement = 0  # Reset the counter when improvement occurs
+                    print('Best model saved')
+
+                    model_filename = f"{args.log_dir}/{args.project_name}-{args.run_name}-kernel={1+2*args.out_init_conv_padding}--best-model.pth"
+                    torch.save(diffusion.state_dict(), model_filename)
+                else:
+                    epochs_since_improvement += 1
+
+                if epochs_since_improvement >= args.early_stopping:
+                    print(f"Early stopping triggered after {iteration} iterations")
+                    break
 
             if test_loss < loss_flag:
 
