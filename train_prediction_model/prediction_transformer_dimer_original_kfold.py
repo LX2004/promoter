@@ -85,7 +85,7 @@ def make_dataset_for_prediction_prometer(promoter, strength, seq_length=50 ):
 
         number += 1
     # print('number = ',number)
-    return features,labels
+    return features, labels
 
 
 def train(params, features_array, labels_array):
@@ -285,27 +285,14 @@ if __name__ == '__main__':
         'fc_hidden2': hp.randint('fc_hidden2',16, 64)
     }
 
-    data_points = []
+    # load data
+    promoter = np.load('../data/promoter.npy')
+    strength = np.load('../data/gene_expression.npy')
 
-    sample_folder = "dataset_seq_length=50/"  
+    print('strength.shape = ', strength.shape)
+    print('promoter.shape = ', promoter.shape)
 
-    for filename in os.listdir(sample_folder):
-
-        if filename.endswith(".pkl"): 
-            file_path = os.path.join(sample_folder, filename)
-
-            with open(file_path, 'rb') as file:
-
-                data_point = pickle.load(file)
-                data_points.append(data_point)
-
-    features = []
-    labels = []
-
-    for data_point in data_points:
-
-        features.append(data_point.feature)
-        labels.append(data_point.label)
+    features, labels = make_dataset_for_prediction_prometer(promoter, strength, seq_length=50 )
 
     features_array = np.array(features)
     labels_array = np.array(labels)
