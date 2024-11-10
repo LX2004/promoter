@@ -44,27 +44,27 @@ def calculate_overall_kmer_correlation(dataset1, dataset2, k, flag=False):
     else:
         return correlation
     
+def make_fasta_file(sequences,path): 
 
-def make_fasta_file(sequences,path): # 将序列写入fasta文件。
 
-    # 检查文件是否存在
     if not os.path.exists(path):
-        # 文件不存在，创建一个新文件
+
         with open(path, 'w') as f:
             f.write("This is a new file.")
 
-        print(f"文件 {path} 不存在，已创建新文件。")
+        print(f"The file {path} does not exist, and a new file has been created.")
     else:
-        print(f"文件 {path} 已存在。")
+        print(f"The file {path} exists.")
 
     with open(path, 'w') as file:
             for i, seq in enumerate(sequences, start=1):
                 seq = seq.upper()
-                file.write(f'>Sequence_{i}\n')  # 写入序列标识符
-                file.write(f'{seq}\n')  # 写入序列
+                file.write(f'>Sequence_{i}\n') 
+                file.write(f'{seq}\n')  
 
     print(f"File {path} created and sequences written successfully.")
-'''one-hot解码工具包'''
+    
+
 def decode_one_hot(one_hot_array):
         
         base_mapping = {0: 'A', 1: 'C', 2: 'G', 3: 'T'}
@@ -82,7 +82,7 @@ def one_hot_encoding(sequence):
     bases = ['A', 'C', 'G', 'T']
     base_dict = dict(zip(bases, range(4)))
     
-    sequence = sequence.upper() #全部转化为大写
+    sequence = sequence.upper()
     
     length = len(sequence)
     encoded_sequence = np.zeros((4, length), dtype=int)
