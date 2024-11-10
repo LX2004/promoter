@@ -240,3 +240,9 @@ This document provides explanations for the hyperparameters used in the predicti
 ---
 
 This file aims to provide a clear understanding of the hyperparameters used for the model. Adjusting these parameters can significantly impact the performance and efficiency of the model.
+
+# References
+1. Synthetic promoter design in Escherichia coli based on a deep generative network.
+
+2. Design of synthetic promoters for cyanobacteria with generative deep-learning model.
+3. 
