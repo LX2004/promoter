@@ -1,4 +1,4 @@
-name: bert
+name: promoter
 channels:
   - anaconda
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
@@ -155,4 +155,3 @@ dependencies:
       - typing-extensions==4.8.0
       - tzdata==2023.3
       - visualizer==0.0.1
-prefix: /var/conda/envs/bert
