@@ -106,3 +106,5 @@ You can view and modify these hyperparameters in the program "train_generate_E_c
 ### 14. `schedule_high`
 - **Description**: Upper limit for the learning rate scheduler, defining the maximum learning rate.
 - **Default Value**: `0.02`
+
+The approximate training time for the diffusion model with default parameters on an 80GB A800 GPU is around 24 hours.
