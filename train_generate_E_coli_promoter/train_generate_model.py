@@ -23,7 +23,14 @@ def main():
 
     loss_flag = 0.15
     args = create_argparser().parse_args()
-
+    
+    model_path = args.log_dir
+    if not os.path.exists(model_path):
+        os.makedirs(folder_path)
+        print(f"Created folder: {model_path}")
+    else:
+        print(f"Folder already exists: {model_path}")
+        
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
     try:
