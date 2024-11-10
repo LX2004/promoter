@@ -15,9 +15,12 @@ def main():
         for epoch in range(200,2000,200):
 
             diffusion = script_utils.get_diffusion_from_args(args).to(device)
+            
+            # Please modify the model file path according to the actual situation.
+            print("Please modify the model file path according to the actual situation.")
             model_path = f'../model/E_coli_promoter-ddpm-2024-04-22-15-58-iteration-{epoch}--kernel=3--model.pth'
             
-            print(' model_path', model_path)
+            print(' model_path = ', model_path)
 
             diffusion.load_state_dict(torch.load(model_path))
             sequences = []
