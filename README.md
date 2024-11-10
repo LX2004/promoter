@@ -1,3 +1,6 @@
+# Platform
+If you wish to directly use the trained model, please visit our [launched Promoter Design Integration Platform](https://bioinformatics-syn.org/). After a simple operation and a brief wait, you will obtain the desired results.
+
 # promoter
 The supplementary folder contains the supplemental materials for the paper.
 The generated promoter sequences and models are located in the folders 'sequences' and 'model', respectively.
