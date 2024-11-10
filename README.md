@@ -31,7 +31,7 @@ conda env create -f environment.yml
 conda activate promoter
 
 ```
-If the above method does not allow for a quick installation, the user can create a virtual environment named "promoter." Then, open the "environment.yml" file to check the environment dependencies and manually install them using conda or pip. The specific steps are as follows:
+If the above method does not allow for a quick installation, the user can create a virtual environment named "promoter." Then, open the "environment.yml" file to check the environment dependencies and manually install them using conda. The specific steps are as follows:
 
 ```
 cd promoter
