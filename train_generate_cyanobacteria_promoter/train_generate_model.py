@@ -22,11 +22,11 @@ class CustomDataset(Dataset):
 
 def main():
 
-    loss_flag = 0.15
+    # loss_flag = 0.15
 
     args = create_argparser().parse_args()
-
     model_path = args.log_dir
+    
     if not os.path.exists(model_path):
         os.makedirs(folder_path)
         print(f"Created folder: {model_path}")
@@ -86,12 +86,15 @@ def main():
         train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
         test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
-        acc_train_loss = 0
+    # Early stopping variables
+        best_test_loss = float('inf')
+        epochs_since_improvement = 0
 
         for iteration in range(1, args.iterations + 1):
 
             diffusion.train()
-
+            acc_train_loss = 0
+            
             for x in train_loader:
 
                 x = x.to(device)
@@ -105,7 +108,7 @@ def main():
 
                 diffusion.update_ema()
 
-            print(f'epoch ={iteration}, train loss = {acc_train_loss}')
+            acc_train_loss /= len(train_loader)
             scheduler.step()
             
             if iteration % args.log_rate == 0:
@@ -129,16 +132,31 @@ def main():
                 acc_train_loss /= args.log_rate
             
                 print(f'epoch = {iteration}, test_loss = {test_loss}')
-            
-            acc_train_loss = 0
+                print(f'epoch ={iteration}, train loss = {acc_train_loss}')
+                
+            # Early stopping logic
+                if test_loss < best_test_loss:
+                    
+                    best_test_loss = test_loss
+                    epochs_since_improvement = 0  # Reset the counter when improvement occurs
+                    print('Best model saved')
 
-            if test_loss < loss_flag:
+                    model_filename = f"{args.log_dir}/{args.project_name}-{args.run_name}-kernel={1+2*args.out_init_conv_padding}--best-model.pth"
+                    torch.save(diffusion.state_dict(), model_filename)
+                else:
+                    epochs_since_improvement += 1
 
-                loss_flag = test_loss
-                print('save best model')
+                if epochs_since_improvement >= args.early_stopping:
+                    print(f"Early stopping triggered after {iteration} iterations")
+                    break
 
-                model_filename = f"{args.log_dir}/{args.project_name}-{args.run_name}-kernel={1+2*args.out_init_conv_padding}--best-model.pth"
-                torch.save(diffusion.state_dict(), model_filename)
+            # if test_loss < loss_flag:
+
+            #     loss_flag = test_loss
+            #     print('save best model')
+
+            #     model_filename = f"{args.log_dir}/{args.project_name}-{args.run_name}-kernel={1+2*args.out_init_conv_padding}--best-model.pth"
+            #     torch.save(diffusion.state_dict(), model_filename)
 
             if iteration % args.checkpoint_rate == 0:
 
@@ -174,6 +192,10 @@ def create_argparser():
 
         schedule_low=1e-4,
         schedule_high=0.02,
+        
+        device=device,
+        # Early stopping parameter
+        early_stopping=10,
 
     )
 
