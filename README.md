@@ -108,5 +108,120 @@ You can view and modify these hyperparameters in the program "train_generate_E_c
 ### 15. `early_stopping`
 - **Description**: Early stopping parameter.
 - **Default Value**: `10`
-
+- 
 The approximate training time for the diffusion model with default parameters on an 80GB A800 GPU is around 12 hours.
+
+# Hyperparameter Explanation for predictive model
+
+This document provides explanations for the hyperparameters used in the predictive model. Each hyperparameter has a specific role in the training process and model configuration. Below is a detailed description of each one:
+
+---
+
+### Device Configuration
+
+- **`device_num`**: `0`
+  - Specifies the GPU device number to be used for training. In this case, it refers to the GPU with ID 4. Ensure that the system has the appropriate GPU and that it is available for training.
+
+---
+
+### Dropout Parameters
+
+- **`dropout_rate1`**: `0.3254948178441311`
+  - The dropout rate for the transformer1 which is used to process original sequence information. Dropout is used to prevent overfitting by randomly setting a fraction of input units to zero during training.
+
+- **`dropout_rate2`**: `0.36751719371886576`
+  - The dropout rate for the transformer2 which is used to process dinucleotides information.
+
+- **`dropout_rate_fc`**: `0.4458100938040957`
+  - The dropout rate for the fully connected (fc) layers.
+
+---
+
+### Embedding Dimensions
+
+- **`embedding_dim1`**: `64`
+  - The dimension of the transformer1. This is the size of the vector representation for each input token in the model.
+
+- **`embedding_dim2`**: `64`
+  - The dimension of the transformer2. This helps in transforming the data into a suitable representation for the following layers of the model.
+
+---
+
+### Fully Connected Layer Parameters
+
+- **`fc_hidden1`**: `210`
+  - The number of units (neurons) in the first fully connected (dense) layer. It represents the complexity of the model in terms of the number of hidden neurons.
+
+- **`fc_hidden2`**: `37`
+  - The number of units in the second fully connected layer. It follows the first fully connected layer and helps in feature transformation.
+
+---
+
+### Hidden Layer Parameters
+
+- **`hidden_dim1`**: `128`
+  - The number of neurons in the hidden layer of the transformer1. This is an important parameter that controls the capacity of the model at this stage.
+
+- **`hidden_dim2`**: `1024`
+  - The number of neurons in the hidden layer of the transformer2. This layer is larger and is designed to allow for more complex transformations.
+
+---
+
+### Regularization
+
+- **`l2_regularization`**: `1e-5`
+  - This is the L2 regularization parameter (also known as weight decay). It helps prevent overfitting by penalizing large weights in the model. A smaller value indicates less regularization, while larger values impose stronger penalties.
+
+---
+
+### Latent Dimensions
+
+- **`latent_dim1`**: `64`
+  - The dimensionality of the transformer1. This represents the size of the compressed representation in the latent space.
+
+- **`latent_dim2`**: `256`
+  - The dimensionality of the transformer2. A larger latent dimension can capture more complex representations but may also lead to overfitting.
+
+---
+
+### Attention Mechanism (Transformer)
+
+- **`num_head1`**: `8`
+  - The number of attention heads in the first attention layer of the transformer1. More heads allow the model to focus on different parts of the input sequence, capturing more information.
+
+- **`num_head2`**: `16`
+  - The number of attention heads in the first attention layer of the transformer2. This helps the model learn better representations from the input data.
+
+---
+
+### Sequence Length
+
+- **`seq_len`**: `50`
+  - The length of the input promoter sequences.
+
+---
+
+### Training Parameters
+
+- **`train_base_learning_rate`**: `0.0001`
+  - The base learning rate used in training. This controls how quickly the model updates its weights during training. A smaller value ensures more stable updates.
+
+- **`train_batch_size`**: `512`
+  - The batch size used in training. A larger batch size can improve training efficiency but requires more memory.
+
+- **`train_epochs_num`**: `500`
+  - The number of epochs (iterations over the entire dataset) for which the model will be trained. Increasing the number of epochs allows the model more opportunities to learn, but it also increases computational cost.
+
+---
+
+### Transformer Model Parameters
+
+- **`transformer_num_layers1`**: `3`
+  - The number of layers of the transformer1 model. Each layer contains attention and feed-forward components that help capture different levels of information.
+
+- **`transformer_num_layers2`**: `3`
+  - The number of layers of the transformer1 mode2. Increasing the number of layers can increase model capacity but also computational complexity.
+
+---
+
+This file aims to provide a clear understanding of the hyperparameters used for the model. Adjusting these parameters can significantly impact the performance and efficiency of the model.
