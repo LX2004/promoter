@@ -57,7 +57,7 @@ You can view and modify these hyperparameters in the program "train_generate_E_c
 ### 2. `batch_size`
 - **Description**: The number of samples used in each training iteration.
 - **Default Value**: `256`
-- **Note**: A larger `batch_size` can improve training stability but requires more memory.
+- **Note**: A larger `batch_size` can improve training stability but requires more memory. Users adjust the batch size according to their GPU’s memory constraints
 
 ### 3. `iterations`
 - **Description**: Total number of training iterations.
