@@ -158,11 +158,18 @@ def main():
             #     model_filename = f"{args.log_dir}/{args.project_name}-{args.run_name}-kernel={1+2*args.out_init_conv_padding}--best-model.pth"
             #     torch.save(diffusion.state_dict(), model_filename)
 
+            # if iteration % args.checkpoint_rate == 0:
+
+            #     model_filename = f"{args.log_dir}/{args.project_name}-{args.run_name}-iteration-{iteration}--kernel={1+2*args.out_init_conv_padding}--model.pth"
+            #     torch.save(diffusion.state_dict(), model_filename)
+
             if iteration % args.checkpoint_rate == 0:
 
                 model_filename = f"{args.log_dir}/{args.project_name}-{args.run_name}-iteration-{iteration}--kernel={1+2*args.out_init_conv_padding}--model.pth"
+                optimizer_filename = f"{args.log_dir}/{args.project_name}-{args.run_name}-iteration-{iteration}--kernel={1+2*args.out_init_conv_padding}--optimizer.pth"
+                
                 torch.save(diffusion.state_dict(), model_filename)
-
+                torch.save(optimizer.state_dict(), optimizer_filename)
 
     except KeyboardInterrupt:
 
