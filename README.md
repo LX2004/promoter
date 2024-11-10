@@ -53,6 +53,7 @@ python train_generate_model.py
 
 python generate_promoters.py
 ```
+or
 ```
 cd train_generate_E_coli_promoter
 
