@@ -47,7 +47,7 @@ conda install package_name
 # If you want to train ddpm for generating E. coli/cyanobacteria promoters, you can perform the following actions.
 run :
 ```
-cd train_generate_E_coli_promotercyanobacteria
+cd train_generate_E_coli_promoter
 
 python train_generate_model.py
 
