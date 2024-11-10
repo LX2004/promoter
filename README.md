@@ -12,6 +12,18 @@ conda env create -f environment.yml
 conda activate promoter
 
 ```
+If the above method does not allow for a quick installation, the user can create a virtual environment named "promoter." Then, open the "environment.yml" file to check the environment dependencies and manually install them using conda or pip. The specific steps are as follows:
+
+```
+cd promoter
+
+conda create -n promoter python=3.10
+
+conda activate promoter
+
+conda install package_name
+
+```
 
 # If you want to train ddpm for generating E. coli/cyanobacteria promoters, you can perform the following actions.
 run :
