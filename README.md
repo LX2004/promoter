@@ -32,7 +32,7 @@ cd train_generate_E_coli_promoter or train_generate_E_coli_promotercyanobacteria
 
 python train_generate_model.py
 
-python generate_promoters
+python generate_promoters.py
 ```
 # For prediction task
 run : 
