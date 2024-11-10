@@ -10,6 +10,8 @@ To directly use the trained model, please visit our [Promoter Design Integration
 
 Click the link to download the pre-trained model.
 
+Models used by other researchers for promoter generation can be accessed through the following link: [VAE](https://figshare.com/articles/software/CyanoDeeplearning/2233%E2%80%8C1044);[GAN](https://github.com/HaochenW/Deep_promoter).
+
 # promoter
 The supplementary folder contains the supplemental materials for the paper.
 The generated promoter sequences and models are located in the folders 'sequences' and 'model', respectively.
