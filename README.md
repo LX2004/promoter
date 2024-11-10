@@ -2,16 +2,15 @@
 The supplementary folder contains the supplemental materials for the paper.
 The generated promoter sequences and models are located in the folders 'sequences' and 'model', respectively.
 # Preparation
-run:
+In the first step, you should create env for code. Follow the steps below to create a virtual environment named "promoter." All code for this project must be run within this environment. run:
 
 ```
 cd promoter
 
-conda create --name promoter
+conda env create -f environment.yml
 
 conda activate promoter
 
-conda install --file request.txt
 ```
 
 # If you want to train ddpm for generating E. coli/cyanobacteria promoters, you can perform the following actions.
