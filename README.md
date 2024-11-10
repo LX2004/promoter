@@ -20,6 +20,8 @@ The generated promoter sequences and models are located in the folders 'sequence
 In the first step, you should create env for code. Follow the steps below to create a virtual environment named "promoter." All code for this project must be run within this environment. run:
 
 ```
+git clone https://github.com/LX2004/promoter.git
+
 cd promoter
 
 conda env create -f environment.yml
