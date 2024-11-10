@@ -12,10 +12,10 @@ import pickle
 import os
 from sklearn.model_selection import KFold
 
-class Seq_sample():
-    def __init__(self, label, feature):
-        self.label = label
-        self.feature = feature
+# class Seq_sample():
+#     def __init__(self, label, feature):
+#         self.label = label
+#         self.feature = feature
 
 class CustomDataset(Dataset):
     def __init__(self, features, labels):
@@ -84,7 +84,8 @@ def make_dataset_for_prediction_prometer(promoter, strength, seq_length=50 ):
         #     pickle.dump(sample, file)
 
         number += 1
-    print('number = ',number)
+    # print('number = ',number)
+    return features,labels
 
 
 def train(params, features_array, labels_array):
