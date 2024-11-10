@@ -1,5 +1,5 @@
 # Platform
-If you wish to directly use the trained model, please visit our [launched Promoter Design Integration Platform](https://bioinformatics-syn.org/). After a simple operation and a brief wait, you will obtain the desired results.
+To directly use the trained model, please visit our [Promoter Design Integration Platform](https://bioinformatics-syn.org/). After a brief setup and a short wait, you will receive the desired results.
 
 # promoter
 The supplementary folder contains the supplemental materials for the paper.
