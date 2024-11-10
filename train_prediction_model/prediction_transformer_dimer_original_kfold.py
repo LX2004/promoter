@@ -118,6 +118,10 @@ def train(params, features_array, labels_array):
         loss_train =[]
         loss_test = []
         metric = []
+        
+        # Early stopping variables
+        best_test_loss = float('inf')
+        epochs_since_improvement = 0
 
         for epoch in range(params['train_epochs_num']):
             gen.train()
@@ -188,6 +192,21 @@ def train(params, features_array, labels_array):
             correlation_coefficient = compute_correlation_coefficient(torch.cat(targets, dim=0), torch.cat(outputs, dim=0))
             loss_test.append(loss_test_one_epoch)
 
+            # Early stopping logic
+            if loss_test_one_epoch < best_test_loss:
+                
+                best_test_loss = loss_test_one_epoch
+                epochs_since_improvement = 0  # Reset the counter when improvement occurs
+                print('Best model saved')
+                torch.save(gen,'./models/kfold_predict_{0}_mertric={1}.pth'.format(epoch,correlation_coefficient))
+
+            else:
+                epochs_since_improvement += 1
+
+            if epochs_since_improvement >= args.early_stopping:
+                print(f"Early stopping triggered after {iteration} iterations")
+                break
+
             if epoch % 10 == 0:
                 
                 print(
@@ -211,6 +230,9 @@ def train(params, features_array, labels_array):
     return -max(test_pearson_kfold)
 
 if __name__ == '__main__':
+    # Early stopping parameter
+    early_stopping=10
+    
     k_folds = 5
     kf = KFold(n_splits=k_folds, shuffle=True)
     
