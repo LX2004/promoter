@@ -9,8 +9,7 @@ def main():
 
     args = create_argparser().parse_args()
 
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    torch.cuda.set_device(4)
+    device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
     try:
         for epoch in range(200,2000,200):
