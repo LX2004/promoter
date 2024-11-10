@@ -39,8 +39,6 @@ run :
 ```
 cd train_prediction_model
 
-python make_dataset.py
-
 python prediction_transformer_dimer_original_kfold.py
 
 python test_model_performance.py
