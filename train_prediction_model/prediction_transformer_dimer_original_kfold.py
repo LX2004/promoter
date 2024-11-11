@@ -198,7 +198,7 @@ def train(params, features_array, labels_array):
                 best_test_loss = loss_test_one_epoch
                 epochs_since_improvement = 0  # Reset the counter when improvement occurs
                 print('Best model saved')
-                torch.save(gen,'./models/kfold_predict_{0}_mertric={1}.pth'.format(epoch,correlation_coefficient))
+                torch.save(gen,'./model/kfold_predict_{0}_mertric={1}.pth'.format(epoch,correlation_coefficient))
 
             else:
                 epochs_since_improvement += 1
@@ -217,7 +217,7 @@ def train(params, features_array, labels_array):
 
 
             if correlation_coefficient > 0.29:
-                torch.save(gen,'./models/kfold_predict_{0}_mertric={1}.pth'.format(epoch,correlation_coefficient))
+                torch.save(gen,'./model/kfold_predict_{0}_mertric={1}.pth'.format(epoch,correlation_coefficient))
         
 
         dict2 = {'correlation_coefficient':max(metric),
@@ -237,7 +237,7 @@ if __name__ == '__main__':
     kf = KFold(n_splits=k_folds, shuffle=True)
     
     params = {
-    'device_num': 4, 
+    'device_num': 0, 
  
     'dropout_rate1': 0.3254948178441311,
     'dropout_rate2': 0.36751719371886576, 
@@ -278,7 +278,7 @@ if __name__ == '__main__':
 
         'train_batch_size':hp.choice('train_batch_size',[1024]),
         'seq_len':hp.choice('seq_len',[50]),
-        'device_num':hp.choice('device_num',[4]),
+        'device_num':hp.choice('device_num',[0]),
         'train_epochs_num':hp.choice('train_epochs_num',[500]),
 
         'train_base_learning_rate': hp.loguniform('train_base_learning_rate', -7, -4),
