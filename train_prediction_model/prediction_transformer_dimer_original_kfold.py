@@ -198,13 +198,13 @@ def train(params, features_array, labels_array):
                 best_test_loss = loss_test_one_epoch
                 epochs_since_improvement = 0  # Reset the counter when improvement occurs
                 print('Best model saved')
-                torch.save(gen,'./model/kfold_predict_{0}_mertric={1}.pth'.format(epoch,correlation_coefficient))
+                torch.save(gen,'./model/kfold_predict_bset_model.pth')
 
             else:
                 epochs_since_improvement += 1
 
             if epochs_since_improvement >= early_stopping:
-                print(f"Early stopping triggered after {iteration} iterations")
+                print(f"Early stopping triggered after {epoch} iterations")
                 break
 
             if epoch % 10 == 0:
