@@ -72,8 +72,8 @@ cd train_prediction_model
 
 python prediction_transformer_dimer_original_kfold.py
 
-python test_model_performance.py
 ```
+The trained prediction model will be stored in folder 'train_prediction_model/model'.
 
 # Hyperparameters for Diffusion Model Training
 
