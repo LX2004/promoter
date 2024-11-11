@@ -1,5 +1,5 @@
 # Framework
-The image outlines a workflow where a diffusion model generates synthetic promoter sequences, followed by a Transformer-based model that predicts the strength of these synthetic promoters based on sequence features.
+The image presents a workflow in which a diffusion model generates synthetic promoter sequences, followed by a Transformer-based model that predicts the strength of these promoters based on specific sequence features.
 ![image](https://github.com/user-attachments/assets/4576d2bf-547f-46cc-a1a9-f5963f72c8b7)
 
 # Platform
