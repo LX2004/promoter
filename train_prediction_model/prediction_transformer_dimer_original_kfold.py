@@ -221,7 +221,6 @@ def train(params, features_array, labels_array):
         
 
         dict2 = {'correlation_coefficient':max(metric),
-                'dataset': sample_folder,
                 'kfold':fold+1}
         
         write_good_record(dict1=params,dict2=dict2,file_path='good_record_kfold.txt')
