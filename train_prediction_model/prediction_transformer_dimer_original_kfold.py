@@ -203,7 +203,7 @@ def train(params, features_array, labels_array):
             else:
                 epochs_since_improvement += 1
 
-            if epochs_since_improvement >= args.early_stopping:
+            if epochs_since_improvement >= early_stopping:
                 print(f"Early stopping triggered after {iteration} iterations")
                 break
 
