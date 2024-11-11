@@ -70,7 +70,7 @@ python generate_promoters.py
 
 or
 ```
-cd train_generate_E_coli_promoter
+cd train_generate_cyanobacteria_promoter
 
 python train_generate_model.py
 
