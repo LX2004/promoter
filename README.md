@@ -4,7 +4,7 @@ The image presents a workflow in which a diffusion model generates synthetic pro
 
 # Platform
 To directly use the trained model, please visit our [Promoter Design Integration Platform](https://bioinformatics-syn.org/). After a brief setup and a short wait, you will receive the desired results.
-![Uploading fcc8815fdb7faec631064b90d4cd9bd.png…]()
+
 Server resources are limited, please be patient.
 ![image](https://github.com/user-attachments/assets/7003f74d-346c-4779-88fa-011338a3bf23)
 
