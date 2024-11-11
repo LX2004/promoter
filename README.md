@@ -9,6 +9,9 @@ To directly use the trained model, please visit our [Promoter Design Integration
 Server resources are limited, please be patient.
 ![image](https://github.com/user-attachments/assets/7003f74d-346c-4779-88fa-011338a3bf23)
 
+Normally, you will get the following result. If an error occurs, please try again later.
+<img width="455" alt="9239ba95fc7c207ed0078494f05dc58" src="https://github.com/user-attachments/assets/c78f2823-bc29-4047-a835-811490e5cae9">
+
 # Pre-trainde model
 [Escherichia coli Promoter Generation Model](https://drive.google.com/file/d/1S7PESHCbILT_Z_rodAT_2TA1d93se2LV/view?usp=drive_link); 
 
