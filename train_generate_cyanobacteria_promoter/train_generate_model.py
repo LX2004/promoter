@@ -33,7 +33,7 @@ def main():
     else:
         print(f"Folder already exists: {model_path}")
 
-    device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+    device = args.device
 
     try:
         diffusion = script_utils.get_diffusion_from_args(args).to(device)
@@ -178,7 +178,7 @@ def main():
 def create_argparser():
 
     run_name = datetime.datetime.now().strftime("ddpm-%Y-%m-%d-%H-%M")
-
+    device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
     defaults = dict(
 
         learning_rate=1e-3,
