@@ -15,7 +15,9 @@ def main():
         for epoch in range(100,2100,100):
 
             diffusion = script_utils.get_diffusion_from_args(args).to(device)
-           
+            # Please modify the model file path according to the actual situation.
+            print("Please modify the model file path according to the actual situation.")
+            
             model_path = f'../model/cyanobacteria_promoter-ddpm-2024-06-01-12-57-iteration-{epoch}--kernel=3--model.pth'
             print(' model_path', model_path)
 
