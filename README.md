@@ -4,6 +4,7 @@ The image presents a workflow in which a diffusion model generates synthetic pro
 
 # Platform
 To directly use the trained model, please visit our [Promoter Design Integration Platform](https://bioinformatics-syn.org/). After a brief setup and a short wait, you will receive the desired results.
+![Uploading fcc8815fdb7faec631064b90d4cd9bd.png…]()
 
 # Pre-trainde model
 [Escherichia coli Promoter Generation Model](https://drive.google.com/file/d/1S7PESHCbILT_Z_rodAT_2TA1d93se2LV/view?usp=drive_link); 
