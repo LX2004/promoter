@@ -182,7 +182,7 @@ def create_argparser():
     defaults = dict(
 
         learning_rate=1e-3,
-        batch_size=256,
+        batch_size=4,
         iterations=2000,
 
         log_to_wandb=True,
