@@ -28,7 +28,7 @@ def main():
             for i in range(2):
 
                 print('strat to generate sequences')
-                samples = diffusion.sample(args.num_images, device)
+                samples = diffusion.sample(args.num_promoters, device)
                 print('end to generate sequences')
 
                 samples = samples.squeeze(dim=1)
@@ -47,7 +47,7 @@ def main():
 def create_argparser():
 
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-    defaults = dict(num_images=1024, device=device, schedule_low=1e-4,schedule_high=0.02,out_init_conv_padding = 1)
+    defaults = dict(num_promoters=1024, device=device, schedule_low=1e-4,schedule_high=0.02,out_init_conv_padding = 1)
 
     defaults.update(script_utils.diffusion_defaults())
     parser = argparse.ArgumentParser()
