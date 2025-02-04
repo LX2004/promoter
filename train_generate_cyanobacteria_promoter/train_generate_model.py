@@ -125,8 +125,8 @@ def main():
 
                         test_loss += loss.item()
                 
-                samples = diffusion.sample(10, device)
-                samples = ((samples + 1) / 2).clip(0, 1).permute(0, 2, 3, 1).numpy()
+                # samples = diffusion.sample(10, device)
+                # samples = ((samples + 1) / 2).clip(0, 1).permute(0, 2, 3, 1).numpy()
 
                 test_loss /= len(test_loader)
                 acc_train_loss /= args.log_rate
