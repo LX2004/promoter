@@ -153,11 +153,13 @@ You can view and modify these hyperparameters in the program "train_generate_E_c
 - **Description**: Early stopping parameter.
 - **Default Value**: `10`
 
-### 16. `num_promoters`
+# Hyperparameter Explanation for promoter generation (genarate_promoters.py)
+
+### 1. `num_promoters`
 - **Description**: Number of promoters generated at a time.
 - **Default Value**: `1024`
-- 
-The approximate training time for the diffusion model with default parameters on an 80GB A800 GPU is around 12 hours.
+
+The approximate time for training the diffusion model (train_generate_model.py) with default parameters and promoter generation (generate_promoters.py) on an 80GB A800 GPU is around 12 hours.
 
 # Hyperparameter Explanation for predictive model
 
