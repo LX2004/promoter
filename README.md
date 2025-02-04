@@ -88,6 +88,14 @@ python prediction_transformer_dimer_original_kfold.py
 python test_model_performance.py
 
 ```
+If computational resources are limited and model training cannot be completed, users can directly run the following code to utilize our pre-trained model. This allows for a rapid reproduction of the results presented in the paper.  
+run : 
+```
+cd train_prediction_model
+
+python test_model_performance.py
+
+```
 The trained prediction model will be stored in folder 'train_prediction_model/model'. The `good_record_kfold.txt` file stores training parameters and training results. `test_model_performance.py` file test the performance of the trained prediction model. Users can test the performance of different models by modifying the parameter `"model_path"` in `test_model_performance.py`.
 
 # Hyperparameters for Diffusion Model Training
