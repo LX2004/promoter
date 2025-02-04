@@ -158,6 +158,7 @@ You can view and modify these hyperparameters in the program "train_generate_E_c
 ### 1. `num_promoters`
 - **Description**: Number of promoters generated at a time.
 - **Default Value**: `1024`
+- **Adjust According to Device Memory Size**: Modify based on the size of the device memory (the larger the number, the more memory required).  
 
 The approximate time for training the diffusion model (train_generate_model.py) with default parameters and promoter generation (generate_promoters.py) on an 80GB A800 GPU is around 12 hours.
 
