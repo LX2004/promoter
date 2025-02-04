@@ -154,7 +154,7 @@ if __name__=='__main__':
     model = torch.load('model/' + model_path).to(device)
 
     rec = mutationEffects(randomset,model)
-    values, names = plt_Ei(rec,save_path='figures/000.png')
+    values, names = plt_Ei(rec,save_path='000.png')
 
     color1 = (78/255,98/255,171/255)
     color2 = (70/255,158/255,180/255)
@@ -194,7 +194,7 @@ if __name__=='__main__':
         k += 3
 
     plt.tight_layout()
-    plt.savefig('figures/subsititution_by_absolute111.png')
+    plt.savefig('subsititution_by_absolute111.png')
     plt.show()
 
 
@@ -229,5 +229,5 @@ if __name__=='__main__':
         k += 3
 
     plt.tight_layout()
-    plt.savefig('figures/subsititution_by_absolute222.png')
+    plt.savefig('subsititution_by_absolute222.png')
     plt.show()
